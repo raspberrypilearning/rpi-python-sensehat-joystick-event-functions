@@ -1,39 +1,39 @@
-The Sense HAT joystick can be used to trigger function calls in response to being moved.
+De Sense HAT-joystick kan worden gebruikt om functieaanroepen te activeren in reactie op verplaatsing.
 
-- For instance, you can tell your program to continually 'listen' for a specific event, such as the joystick being pushed up (`direction_up`), and to then trigger a function (called `pushed_up` in this example) in response.
-
-    ```python
-    sense.stick.direction_up = pushed_up
-    ```
-
-- The function triggered by the event can either have no parameters, or it can take the event as a parameter. In the example below, the event is simply printed out.
+- Je kunt bijvoorbeeld je programma vertellen om voortdurend te 'luisteren' naar een specifieke gebeurtenis, zoals de joystick die omhoog wordt geduwd (`direction_up`), en vervolgens een functie (in dit voorbeeld `omhoog_geduwd` genoemd) te activeren.
 
     ```python
-    def pushed_up(event):
-        print(event)
+    sense.stick.direction_up = omhoog_geduwd
     ```
 
-- This function would print a timestamp of the event, the direction in which the joystick was moved, and the specific action. The output would look similar to this:
+- De functie die door de gebeurtenis wordt geactiveerd, kan geen parameters hebben of de gebeurtenis als parameter nemen. In het onderstaande voorbeeld wordt de gebeurtenis eenvoudig afgedrukt.
+
+    ```python
+    def omhoog_geduwd(gebeurtenis):
+        print(gebeurtenis)
+    ```
+
+- Met deze functie wordt een tijdstempel van de gebeurtenis, de richting waarin de joystick werd verplaatst en de specifieke actie afgedrukt. De output ziet er ongeveer zo uit:
 
     ```python
     InputEvent(timestamp=1503565327.399252, direction=u'up', action=u'pressed')
     ```
 
-- Another useful example is the `direction_any` method:
+- Een ander nuttig voorbeeld is de methode `direction_any`:
 
     ```python
-    sense.stick.direction_any = do_thing
+    sense.stick.direction_any = doe_ding
     ```
-- If you use this method as seen in the example, the `do_thing` function will be triggered in response to any joystick event. For instance, you could define the `do_thing` function so that it reports the exact event in plain English.
+- Als je deze methode gebruikt, zoals te zien in het voorbeeld, wordt de functie `doe_ding` geactiveerd als reactie op een joystickgebeurtenis. Je kunt bijvoorbeeld de functie `doe_ding` definiëren, zodat deze de exacte gebeurtenis in gewoon Engels rapporteert.
 
     ```python
-    def do_thing(event):
-        if event.action == 'pressed':
-            print('You pressed me')
-            if event.direction == 'up':
-                print('Up')
-            elif event.direction == 'down':
-                print('Down')
-        elif event.action == 'released':
-            print('You released me')
+    def doe_ding(gebeurtenis):
+        if gebeurtenis.action == 'press':
+            print('Je hebt me ingedrukt')
+            if gebeurtenis.direction == 'up':
+                print('Omhoog')
+            elif gebeurtenis.direction = = 'down':
+                print('Omlaag')
+        elif gebeurtenis.action == 'released':
+            print('Je hebt me losgelaten')
     ```
