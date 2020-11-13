@@ -1,0 +1,18 @@
+---
+title: Llamadas de función de activación con el joystick Sense HAT
+hero_image: images/banner.png
+description: Cómo activar una llamada de función en respuesta a eventos de joystick
+original_url:
+theme: red #possible values: blue, green, navy, orange, red, turquoise, violet, yellow
+duration: 1 #possible values: 1, 2 or 3
+listed: false
+ingredient: true
+copyedit: true
+curriculum:
+interests:
+technologies: "python, sensehat"
+site_areas:
+steps:
+  - 
+    title: Funciones de activación
+
