@@ -29,11 +29,11 @@ Le joystick Sense HAT peut être utilisé pour déclencher des appels de fonctio
     ```python
     def do_thing(event):
         if event.action == 'pressed':
-            print('Tu m'as pressé')
+            print('Tu m\'as pressé')
             if event.direction == 'up':
                 print('Haut')
             elif event.direction == 'down':
                 print('Bas')
         elif event.action == 'released':
-            print('Tu m'as relaché')
+            print('Tu m\'as relaché')
     ```
